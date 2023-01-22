@@ -1,0 +1,14 @@
+{
+  "name": "leetcode_questions",
+  "version": "0.0.1",
+  "description": "solving leetcode questions with nvim editor",
+  "main": "index.js",
+  "author": "iamgabrielsoft",
+  "license": "MIT",
+  "scripts": {
+      "dev": "nodemon index.js"
+  },
+  "dependencies": {
+    "nodemon": "^2.0.20"
+  }
+}
