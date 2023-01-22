@@ -4,13 +4,14 @@
 const http = require('http'); 
 const port = 9090; 
 const fizBuzz = require('./fizbuz'); 
-
+const divide_algo = require('./steps_to_reduce_a_number.js'); 
 
 
 
 const main = () => {
-    let x = fizBuzz(6);
-    console.log('fizbuz result:', x); 
+    //let x = fizBuzz(6);
+    let x = divide_algo(5000); 
+    console.log('steps result:', x); 
 }; 
 
 
