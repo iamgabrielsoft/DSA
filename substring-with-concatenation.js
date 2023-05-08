@@ -1,5 +1,6 @@
 
-const substringAndConcatenation = (s, words) => {
+//first
+const firstMethod = (s, words) => {
     let ans = []; 
 
     const totalWords = words.reduce((total, word) => (total += word.length), 0); 
@@ -34,3 +35,59 @@ const simpleCheck = (str, words) => {
     return false; 
 }; 
 
+
+
+
+
+//second way
+
+
+const secondMethod = (s, words) => {
+    let map = new Map(); 
+
+    let wordCount = words.length; 
+    let wordLength = words[0].length; 
+
+    let totalWords = wordCount * wordLength; 
+
+    let leftIndex = 0; 
+    let result = []; //used to store our total result
+    let rightIndex = totalWords - 1; 
+
+    console.log(rightIndex); 
+
+    const helper = (tmptStr) => {
+        let visited = new Map(); 
+        for(let i = 0; i<tmptStr.length; i+=wordLength) {
+            console.log(i); 
+            let word = tmptStr.substr(i, wordLength); //one word
+            
+            //allowed duplicate
+            visited.has(word) ? visited.get(word, visited.get(word) + 1) : visited.set(word, 1); 
+        }
+
+
+        for (let [key, value] of visited) {
+            console.log('key', key, value); 
+            if(map.get(key) != null) return false; 
+        }
+
+        return true; 
+    }
+
+    while(rightIndex < s.length) {
+        if(rightIndex - leftIndex + 1 == totalWords) {
+            let tmptStr = s.substring(leftIndex, rightIndex + 1); 
+            //result.push(leftIndex); 
+            if(helper(tmptStr)) result.push(leftIndex); 
+            leftIndex++; 
+        }
+       
+        rightIndex++ //increment rightIndex
+    }
+
+    console.log('result', result); 
+    return result; 
+}
+
+secondMethod("wordgoodgoodgoodbestword", ["word", "good", "best", "word"]);
