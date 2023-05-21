@@ -1,10 +1,8 @@
 
 //[2,1,3] [1,2,3]
 var nextPermutation = (nums) => {
-  const swapping = (i, j) => {
-    [nums[i], nums[j]] = [nums[j], nums[i]];
-  };
-
+  const swapping = (i, j) => [nums[i], nums[j]] = [nums[j], nums[i]];
+  
   const reversing = (left) => {
     let right = nums.length - 1;
 
@@ -35,7 +33,4 @@ var nextPermutation = (nums) => {
 
 
   reversing(0); //revert to its initial state [1, 2, 3]
-
-  
-  console.log(nums);
 };
