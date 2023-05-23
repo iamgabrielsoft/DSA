@@ -25,7 +25,10 @@ var longestValidParenthesis = (s) => {
             count = Math.max(count, left + right); 
         }
 
-        left = right = 0; //reset everything
+        if(right > left){
+          left = right = 0; //reset everything
+        }
+        
     }
 
 
@@ -43,6 +46,10 @@ var longestValidParenthesis = (s) => {
 
         if(left === right){
             count = Math.max(count, left + right); 
+        }
+
+        if(left > right){
+            left = right = 0; 
         }
     }
 
