@@ -1,3 +1,4 @@
+import Stack from "./stack";
 
 /**
  * First method
@@ -58,4 +59,27 @@ var longestValidParenthesis = (s) => {
 }; 
 
 
-longestValidParenthesis('(');
+/**
+ * Second method
+ * solution base on stack
+ */
+var longestValidParenthesis = (s) => {
+    let max = 0; 
+    const stack = new Stack(); 
+    stack.push(-1); 
+
+    for(let i = 0; i<s.length; i++){
+        if(s.charAt(i) == '('){
+            stack.push(i); 
+        }else {
+            stack.pop(); 
+            if(stack.isEmpty()){
+                stack.push(i); 
+            }else {
+                max = Math.max(max, i - stack.peek()); 
+            }
+        }
+    }
+
+    return max; 
+}

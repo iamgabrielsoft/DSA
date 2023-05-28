@@ -11,7 +11,7 @@ class Stack {
     }
 
     /** delete an element  */
-    remove(){
+    pop(){
         if(this.items > 0){
             return this.items.pop()
         }
@@ -31,4 +31,7 @@ class Stack {
     clear() {
         return this.items = []; 
     }
-}
+}; 
+
+
+export default Stack; 
