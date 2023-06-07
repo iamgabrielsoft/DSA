@@ -2,7 +2,8 @@ import java.util.*;
 
 
 
-class Solutionx {
+
+class LongestValidParenthesis {
     public int longestValidParenthesis(String s){
         int max = 0; 
         Stack<Integer> stack = new Stack(); 
@@ -22,5 +23,10 @@ class Solutionx {
         }
 
         return max; 
+    }
+
+
+    public static void main(String args[]) {
+
     }
 }
