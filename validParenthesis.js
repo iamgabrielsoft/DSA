@@ -1,5 +1,11 @@
 
-
+/**
+ * This is a Leetcode problem
+ * method 1
+ * https://leetcode.com/problems/valid-parentheses/
+ * @param {*} s 
+ * @returns boolean
+ */
 var isValid = function(s){
     const stack = []; 
     const pairs = {
@@ -30,3 +36,33 @@ var isValid = function(s){
     return stack.length === 0; 
 }; 
 
+
+/**
+ * method 2
+ * @param {string} s
+ * @return {boolean}
+ */
+var isValid = function(s) {
+    const stack = [];
+
+    for(const letter of s){
+        if(letter === '('){
+            stack.push(')')
+        
+        }else if(letter === '{'){
+            stack.push('}')
+        
+        }else if(letter === '['){
+            stack.push(']')
+        }
+
+        //another edge case
+
+        else if(stack.length === 0 || stack.pop() !== letter){
+            return false; 
+        }
+    }
+
+
+    return stack.length === 0; 
+};
