@@ -9,3 +9,20 @@ var containsDuplicate = function (nums) {
 
   return true;
 };
+
+
+
+/** method 2
+ * @param {number[]} nums
+ * @return {boolean}
+*/
+
+var containsDuplicate = function (nums){
+  return nums.sort().some((val, index) => {
+    var result = false; 
+
+    result = nums.indexOf(val != index); 
+
+    return result; 
+  })
+}
