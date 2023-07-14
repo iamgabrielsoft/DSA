@@ -14,9 +14,11 @@ function threeSum(nums){
 
             //where our target is zero
             if(sum === target) {
-                arr.push([nums[i], nums[j], nums[k]]); 
-                j--; 
-                k++; 
+                arr.push([nums[i], nums[j], nums[k]]);
+                while(nums[j] === nums[j - 1]) j++; 
+                while(nums[k] == nums[k -1]) k--;  
+                j++; 
+                k--; 
             }
 
             else if(j < k){
