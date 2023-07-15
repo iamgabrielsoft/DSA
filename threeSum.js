@@ -1,4 +1,8 @@
-
+/**
+ * https://leetcode.com/problems/3sum/description/
+ * @param {Array<number>} nums 
+ * @returns an array
+ */
 
 function threeSum(nums){
     const arr = []; 
@@ -11,21 +15,32 @@ function threeSum(nums){
 
         while(j < k){
             const sum = nums[i] + nums[j] + nums[k]; 
+            console.log('print here:', sum); 
 
             //where our target is zero
             if(sum === target) {
                 arr.push([nums[i], nums[j], nums[k]]);
-                while(nums[j] === nums[j - 1]) j++; 
-                while(nums[k] == nums[k -1]) k--;  
+                console.log(arr); 
+                while(nums[j] === nums[j - 1]) {
+                    j++; 
+                }; 
+
+
+                while(nums[k] == nums[k -1]) {
+                    k--; 
+                } 
+
                 j++; 
                 k--; 
             }
 
             else if(j < k){
+               
                 j++; 
             }
 
             else {
+               
                 k--; 
             }
         }
@@ -33,3 +48,6 @@ function threeSum(nums){
 
     return arr; //an empty array
 }
+
+
+threeSum([0,0,0]); 
