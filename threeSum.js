@@ -66,7 +66,7 @@ function threeSum2(nums) {
             continue; 
         }
 
-        let target = -nums[i]; 
+        let target = -nums[i]; //this could be zero or anything, our target is dynamic but in this case its zero
         for(let L = i + 1, R = nums.length - 1; L < R;){
             let sum = nums[L] + nums[R]; 
 
