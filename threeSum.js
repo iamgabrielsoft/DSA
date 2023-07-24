@@ -1,10 +1,11 @@
 /**
+ * Method 1
  * https://leetcode.com/problems/3sum/description/
  * @param {Array<number>} nums 
  * @returns an array
  */
 
-function threeSum(nums){
+function threeSum1(nums){
     const arr = []; 
 
     let target = 0; 
@@ -50,4 +51,39 @@ function threeSum(nums){
 }
 
 
-threeSum([0,0,0]); 
+
+/**
+ * Mehod 2
+ * https://leetcode.com/problems/3sum/description/
+ */
+function threeSum2(nums) {
+    nums.sort((a, b) => a - b); 
+
+    let aa = []; 
+
+    for(let i = 0; i<nums.length; i++){
+        if(i > 0 && nums[i - 1] === nums[i]) {
+            continue; 
+        }
+
+        let target = -nums[i]; 
+        for(let L = i + 1, R = nums.length - 1; L < R;){
+            let sum = nums[L] + nums[R]; 
+
+            if(sum === target){
+                aa.push([nums[i], nums[L], nums[R]]); 
+                L++; 
+            
+            }else if(sum < target){
+                L++; 
+            
+            }else {
+                R--; 
+            }
+        }
+    }; 
+
+    return aa; 
+}; 
+
+console.log(threeSum2([0,0,0])); 
