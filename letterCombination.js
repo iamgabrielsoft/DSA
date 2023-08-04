@@ -2,6 +2,7 @@
 
 
 /**
+ * method 1
  * @param {string} digits
  * @return {string[]}
  */
@@ -34,4 +35,42 @@ var letterCombinations = function(digits){
     }
     
     return result; //when not  found
+}; 
+
+
+
+
+/**
+ * method 2
+ * @param {string} digits
+ * @returns {string[]} 
+ */
+const letterCombinations = (digits) => {
+    const result = []; 
+
+    const mapper = {
+        '2': 'abc',
+        '3': 'def',
+        '4': 'ghi',
+        '5': 'jkl',
+        '6': 'mno',
+        '7': 'pqrs',
+        '8': 'tuv',
+        '9': 'wxyz'
+    };
+
+    const checker = (id, combination) => {
+        if(id === digits.length){
+            result.push(combination); 
+            return result; 
+        }
+
+        for(let key of mapper[digits[id]]){
+            checker(id + 1, combination + key); 
+        }
+    }
+
+    checker(0, ''); 
+
+    return result; 
 }
