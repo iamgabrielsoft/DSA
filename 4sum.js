@@ -58,6 +58,3 @@ var fourSum = (nums, target) => {
 
     return resultant; 
 }; 
-
-
-console.log(fourSum([2,2,2,2,2], 8)); 
