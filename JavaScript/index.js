@@ -4,7 +4,7 @@
 const http = require('http'); 
 const port = 9090; 
 const fizBuzz = require('./fizbuz'); 
-const divide_algo = require('./steps_to_reduce_a_number.js'); 
+const divide_algo = require('../steps_to_reduce_a_number.js'); 
 
 
 
