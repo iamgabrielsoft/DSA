@@ -1,7 +1,7 @@
 
 
 
-class Solution {
+class RemoveNthFromEnd {
     public ListNode removeNthFromEnd(ListNode head, int n){
         int counter = 0; 
 
@@ -35,5 +35,9 @@ class Solution {
         stage.next = stage.next.next;
 
         return head; 
+    }
+
+    public static void main(String[] args){
+        
     }
 }

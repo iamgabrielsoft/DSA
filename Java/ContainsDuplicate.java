@@ -16,4 +16,8 @@ public class ContainsDuplicate {
 
         return true;
     }
+
+    public static void main(String[] args){
+        
+    }
 }

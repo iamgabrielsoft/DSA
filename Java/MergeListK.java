@@ -43,4 +43,8 @@ class Solution {
 
     return node.next; 
   }
+
+  public static void main(String[] args){
+    
+  }
 }

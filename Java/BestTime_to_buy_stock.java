@@ -15,4 +15,8 @@ public class BestTime_to_buy_stock {
 
         return profit;
     }
+
+    public static void main(String[] args){
+        
+    }
 }

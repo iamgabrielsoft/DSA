@@ -37,4 +37,8 @@ class IsValid {
 
         return stack.isEmpty(); 
     }
+
+    public static void main(String[] args){
+        
+    }
 }
