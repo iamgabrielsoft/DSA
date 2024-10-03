@@ -34,11 +34,18 @@ class MyAtoi {
     return counter * res;
   }
 
+  public static int recursiveMethod(String s) {
+
+
+    return 1;
+  }
+
   public static void main(String[] args){
+    
     String s  = "1337c0d3";
 
     int result = myAtoi(s);
 
-   // System.out.println(result);
+   System.out.println(result);
   }
 }
