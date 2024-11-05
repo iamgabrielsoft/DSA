@@ -34,15 +34,24 @@ class MyAtoi {
     return counter * res;
   }
 
-  public static int recursiveMethod(String s) {
+  public static int recursiveMethod(String s, int n) {
+
+    if(s == "" || !s.matches("^\\d*$")) {
+      return 0;
+    }
+
+    if(n == 1){
+      return s.charAt(0) - '0';
+    }
 
 
-    return 1;
+    return (10 * recursiveMethod(s, n - 1) + s.charAt(n -1) - '0');
   }
 
   public static void main(String[] args){
     
-    String s  = "1337c0d3";
+    String s  = "   -042";
+    int n = s.length();
 
     int result = myAtoi(s);
 
